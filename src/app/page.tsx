@@ -1,6 +1,10 @@
 
+import EventCountdown from '@/components/sections/event-countdown/event-countdown';
+
 export default function Home() {
   return (
-      <div>TEST</div>
+    <main>
+      <EventCountdown />
+    </main>
   );
 }
