@@ -1,0 +1,280 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  padding: 0 15px;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1040;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Speaker Modal Styles */
+.speaker-modal {
+  position: relative;
+  z-index: 1050;
+  width: 100%;
+  pointer-events: auto;
+}
+
+.speaker-modal .modal-dialog {
+  width: 700px;
+  max-width: 90vw;
+  margin: 1.75rem auto;
+}
+
+.speaker-modal .modal-content {
+  border-radius: 15px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.speaker-modal .modal-header {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7303c0 100%);
+  border-bottom: none;
+  padding: 20px 30px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.close-icon {
+  font-weight: 300;
+  display: block;
+}
+
+.speaker-modal .modal-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.speaker-modal .modal-body {
+  padding: 30px;
+  background-color: #fff;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.speaker-modal-image {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7303c0 100%);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 4px solid #fff;
+}
+
+.speaker-modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.speaker-modal-social {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.speaker-modal-social a {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.speaker-modal-social a svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+.speaker-modal-social a:hover {
+  background-color: #0077b5;
+}
+
+.speaker-modal-social a:hover svg {
+  fill: #fff;
+}
+
+/* Speaker Profile Container */
+.speaker-profile-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.speaker-info-container {
+  margin-left: 20px;
+  flex: 1;
+}
+
+.speaker-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #1b273d;
+}
+
+.speaker-position {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.company-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.company-logo {
+  object-fit: contain;
+}
+
+.company-name {
+  margin-left: 15px;
+  font-size: 15px;
+  color: #555;
+}
+
+/* Bio Section */
+.speaker-bio-container {
+  margin-bottom: 20px;
+}
+
+.speaker-bio-container h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1b273d;
+}
+
+.bio-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+}
+
+/* Social Links */
+.speaker-social {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.linkedin-link:hover {
+  background-color: #e0e0e0;
+}
+
+
+
+.speaker-modal .modal-footer {
+  border-top: none;
+  padding: 15px 30px 25px;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.speaker-modal .btn-primary {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7303c0 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 30px;
+  border-radius: 30px;
+  display: block;
+  margin: 0 auto;
+  min-width: 120px;
+}
+
+.speaker-modal .btn-primary:hover {
+  background: linear-gradient(135deg, #15325f 0%, #1f3e73 50%, #5c0299 100%);
+  border: none;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 767px) {
+  .speaker-modal .modal-body {
+    padding: 20px;
+  }
+  
+  .speaker-modal-image {
+    margin-bottom: 20px;
+  }
+  
+  .speaker-modal-info .speaker-company {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .speaker-modal-info .speaker-company img {
+    margin-bottom: 10px;
+  }
+}
