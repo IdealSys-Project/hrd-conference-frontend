@@ -2,6 +2,7 @@
 import EventCountdown from '@/components/sections/event-countdown/event-countdown';
 import EventOverview from '@/components/sections/event-overview/event-overview';
 import KeyMainTheme from '@/components/sections/key-main-theme/key-main-theme';
+import EventBenefits from '@/components/sections/event-benefits/event-benefits';
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <EventCountdown />
       <EventOverview />
       <KeyMainTheme />
+      <EventBenefits />
     </main>
   );
 }
