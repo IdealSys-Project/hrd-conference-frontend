@@ -3,6 +3,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import Providers from "@/app/provider";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer/Footer";
 import { ReactNode } from "react";
 
 const poppins = Poppins({
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

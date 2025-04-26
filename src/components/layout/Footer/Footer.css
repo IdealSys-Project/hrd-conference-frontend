@@ -1,0 +1,151 @@
+/* Footer Styles */
+.footer-area {
+  position: relative;
+  padding: 40px 0 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 32, 128, 0.97) 0%,
+    rgba(30, 50, 150, 0.97) 50%,
+    rgba(75, 0, 130, 0.97) 100%
+  );
+  color: #fff;
+}
+
+.footer-widget {
+  padding-bottom: 30px;
+}
+
+.footer-about {
+  margin-top: 40px;
+}
+
+.footer-logo {
+  margin-bottom: 15px;
+}
+
+.footer-logo img {
+  max-height: 60px;
+}
+
+.footer-address {
+  margin-top: 40px;
+}
+
+.f-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.footer-contact {
+  margin-top: 40px;
+}
+
+.footer-website a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-website a:hover {
+  text-decoration: underline;
+}
+
+.text {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.footer-copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.copyright p {
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.copyright p:hover {
+  text-decoration: underline;
+}
+
+/* Analytics Styles */
+#simple-analytics {
+  margin-bottom: 20px;
+}
+
+.analytics-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.stat-box {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.live-traffic-container {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+  .footer-about,
+  .footer-address,
+  .footer-contact {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .footer-logo {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .f-title {
+    font-size: 18px;
+  }
+  
+  .stat-box {
+    padding: 10px;
+  }
+  
+  .stat-value {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .analytics-container {
+    padding: 10px;
+  }
+}
