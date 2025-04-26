@@ -89,6 +89,48 @@
   vertical-align: middle;
 }
 
+/* Back to Top Button Styles */
+.back-to-top {
+  font-size: 20px;
+  color: #fff;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(to right, #102baf 0%, #1664ff 50%, #102baf 100%);
+  background-size: 200% auto;
+  text-align: center;
+  z-index: 999;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  border: none;
+  left: auto; /* Ensure it's not affected by the sidebar positioning */
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  color: #fff;
+  background-position: right center;
+  transform: translateY(-5px);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
 /* Responsive styles */
 @media (max-width: 767px) {
   .social-sidebar {
@@ -125,5 +167,17 @@
   .social-sidebar ul li a:hover {
     width: 40px;
     transform: translateY(-5px);
+  }
+  
+  .back-to-top {
+    right: 17px;
+    bottom: 70px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .back-to-top svg {
+    width: 16px;
+    height: 16px;
   }
 }
