@@ -130,6 +130,10 @@
     display: flex;
     justify-content: center;
   }
+
+  .footer-copyright {
+    padding-bottom: 40px;
+  }
   
   .f-title {
     font-size: 18px;
