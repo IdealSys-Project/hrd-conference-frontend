@@ -6,6 +6,7 @@ import EventBenefits from '@/components/sections/event-benefits/event-benefits';
 import TargetAudience from '@/components/sections/target-audience/target-audience';
 import Speakers from '@/components/sections/speakers/speakers';
 import SponsorshipForm from '@/components/sections/sponsorship/sponsorship-form';
+import SpeakingForm from '@/components/sections/speaking-opportunity/speaking-form';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <TargetAudience />
       <Speakers />
       <SponsorshipForm />
+      <SpeakingForm />
     </main>
   );
 }
