@@ -1,0 +1,62 @@
+.our-sponsors-section {
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+.our-sponsors-section h2 {
+  color: #4a148c;
+  position: relative;
+  display: inline-block;
+}
+
+.sponsor-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.sponsor-logo {
+  max-width: 150px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.sponsor-logo:hover {
+  transform: scale(1.05);
+}
+
+.sponsor-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .our-sponsors-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .sponsor-logo {
+    max-width: 120px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 575px) {
+  .our-sponsors-section {
+    padding: 40px 0;
+  }
+  
+  .sponsor-logo {
+    max-width: 100px;
+    height: 60px;
+  }
+}
