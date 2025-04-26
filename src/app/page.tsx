@@ -9,6 +9,7 @@ import SponsorshipForm from '@/components/sections/sponsorship/sponsorship-form'
 import SpeakingForm from '@/components/sections/speaking-opportunity/speaking-form';
 import OurSponsors from '@/components/sections/our-sponsors/our-sponsors';
 import RegistrationForm from '@/components/sections/registration-form/registration-form';
+import EventHighlights from '@/components/sections/event-highlights/event-highlights';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <SpeakingForm />
       <OurSponsors />
       <RegistrationForm />
+      <EventHighlights />
     </main>
   );
 }
