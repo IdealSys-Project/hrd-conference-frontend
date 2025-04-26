@@ -13,6 +13,22 @@ const Header = () => {
   const [isVenueModalOpen, setIsVenueModalOpen] = useState(false);
   const modalRef = useRef<HTMLDialogElement>(null);
 
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+      
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+      
+      window.history.pushState(null, '', href);
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsTop(window.scrollY === 0);
@@ -70,11 +86,14 @@ const Header = () => {
 
         <nav className="hidden lg:flex flex-grow justify-center space-x-8 mx-auto">
           {menuItems.map((item) => (
-            <Link key={item.href} href={item.href}>
-              <span className="text-white relative group cursor-pointer text-base font-semibold">
-                {item.text}
-                <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
-              </span>
+            <Link 
+              key={item.href} 
+              href={item.href}
+              onClick={(e) => handleNavLinkClick(e as React.MouseEvent<HTMLAnchorElement>, item.href)}
+              className="text-white relative group cursor-pointer text-base font-semibold"
+            >
+              {item.text}
+              <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
             </Link>
           ))}
         </nav>
@@ -203,7 +222,7 @@ const Header = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => handleNavLinkClick(e as React.MouseEvent<HTMLAnchorElement>, item.href)}
                   className="hover:text-purple-300 transition"
                 >
                   {item.text}
