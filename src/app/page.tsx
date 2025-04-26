@@ -5,6 +5,7 @@ import KeyMainTheme from '@/components/sections/key-main-theme/key-main-theme';
 import EventBenefits from '@/components/sections/event-benefits/event-benefits';
 import TargetAudience from '@/components/sections/target-audience/target-audience';
 import Speakers from '@/components/sections/speakers/speakers';
+import SponsorshipForm from '@/components/sections/sponsorship/sponsorship-form';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <EventBenefits />
       <TargetAudience />
       <Speakers />
+      <SponsorshipForm />
     </main>
   );
 }
