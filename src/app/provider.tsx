@@ -3,6 +3,9 @@
 import { ReactNode, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Preloader from "@/components/Preloader";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 export default function Providers({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -17,5 +20,5 @@ export default function Providers({ children }: { children: ReactNode }) {
     return () => clearTimeout(timeout);
   }, [pathname]);
 
-  return <>{loading ? <Preloader /> : children}</>;
+  return <QueryClientProvider client={queryClient}>{loading ? <Preloader /> : children}</QueryClientProvider>;
 }
