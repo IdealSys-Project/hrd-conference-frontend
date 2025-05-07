@@ -1,55 +1,48 @@
-import { useRegistrationFormStore } from '@/shared/stores/useRegistrationStore';
-import { useMutation } from '@tanstack/react-query';
-import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { get, pick } from 'lodash';
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
 import toast from 'react-hot-toast';
+import { get, pick } from 'lodash';
+import useSponsorshipFormStore from '@/shared/stores/useSponsorshipFormStore';
 
-export interface RegistrationFormValues {
-  fullName: string;
-  email: string;
-  company: string;
-  jobTitle: string;
-  contactNumber: string;
-  promoCode: string;
-}
+export const useSponsorshipAction = () => {
+  const store = useSponsorshipFormStore();
 
-export const useRegistrationForm = () => {
   const registerMutation = useMutation({
-    mutationFn: async (data: RegistrationFormValues) => {
-      const response = await axios.post('/api/registration-submissions', data);
+    mutationFn: async (data: any) => {
+      const response = await axios.post('/api/sponsorship-inquiries', data);
       return response.data;
     },
   });
 
-  const store = useRegistrationFormStore();
-
-  const formik = useFormik<RegistrationFormValues>({
+  const formik = useFormik({
     initialValues: pick(store, [
       'fullName',
       'email',
       'company',
       'jobTitle',
       'contactNumber',
-      'promoCode',
+      'interest',
     ]),
     enableReinitialize: true,
     validateOnChange: true,
     validationSchema: Yup.object({
-      fullName: Yup.string().required('Please provide your full name.'),
-      email: Yup.string()
-        .email('The email address entered is invalid.')
-        .required('An email address is required.'),
-      company: Yup.string().required('Please specify your company name.'),
-      jobTitle: Yup.string().required('Kindly enter your job title.'),
-      contactNumber: Yup.string().required('A contact number is required.'),
-      promoCode: Yup.string(),
+      fullName: Yup.string()
+        .required('Full Name is required')
+        .min(3, 'Full Name must be at least 3 characters'),
+      email: Yup.string().email('Invalid email format').required('Email is required'),
+      company: Yup.string().required('Company is required'),
+      jobTitle: Yup.string().required('Job Title is required'),
+      contactNumber: Yup.string()
+        .matches(/^\+60\d{8,9}$/, 'Must be a valid Malaysian contact number (e.g., +60123456789)')
+        .required('Contact Number is required'),
+      interest: Yup.string().required('Interest is required'),
     }),
     onSubmit: async (values, formikHelpers) => {
       try {
         await registerMutation.mutateAsync(values);
-        toast.success('Thank you for your registration! We will contact you soon.', {
+        toast.success('Thank you for your interest! We will contact you soon.', {
           icon: '✅',
           duration: 5000,
           style: {
@@ -61,8 +54,8 @@ export const useRegistrationForm = () => {
             fontSize: '15px',
           },
         });
-        store.resetForm();
-        formikHelpers.resetForm();
+        // store.resetForm();
+        // formikHelpers.resetForm();
       } catch (error) {
         console.error('Registration failed:', error);
         const errorMessage = Array.isArray(get(error, 'response.data.error.message'))
