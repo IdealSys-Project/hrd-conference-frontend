@@ -54,8 +54,8 @@ export const useSponsorshipAction = () => {
             fontSize: '15px',
           },
         });
-        // store.resetForm();
-        // formikHelpers.resetForm();
+        store.resetForm();
+        formikHelpers.resetForm();
       } catch (error) {
         console.error('Registration failed:', error);
         const errorMessage = Array.isArray(get(error, 'response.data.error.message'))

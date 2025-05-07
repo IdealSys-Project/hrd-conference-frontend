@@ -1,55 +1,48 @@
-import { useRegistrationFormStore } from '@/shared/stores/useRegistrationFormStore';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { get, pick } from 'lodash';
 import toast from 'react-hot-toast';
+import { useSpeakingFormStore } from '@/shared/stores/useSpeakingFormStore';
 
-export interface RegistrationFormValues {
+export interface SpeakingFormValues {
   fullName: string;
   email: string;
   company: string;
   jobTitle: string;
   contactNumber: string;
-  promoCode: string;
 }
 
-export const useRegistrationForm = () => {
+export const useSpeakingForm = () => {
   const registerMutation = useMutation({
-    mutationFn: async (data: RegistrationFormValues) => {
-      const response = await axios.post('/api/registration-submissions', data);
+    mutationFn: async (data: SpeakingFormValues) => {
+      const response = await axios.post('/api/speaking-inquiries', data);
       return response.data;
     },
   });
 
-  const store = useRegistrationFormStore();
+  const store = useSpeakingFormStore();
 
-  const formik = useFormik<RegistrationFormValues>({
-    initialValues: pick(store, [
-      'fullName',
-      'email',
-      'company',
-      'jobTitle',
-      'contactNumber',
-      'promoCode',
-    ]),
+  const formik = useFormik<SpeakingFormValues>({
+    initialValues: pick(store, ['fullName', 'email', 'company', 'jobTitle', 'contactNumber']),
     enableReinitialize: true,
     validateOnChange: true,
     validationSchema: Yup.object({
-      fullName: Yup.string().required('Please provide your full name.'),
+      fullName: Yup.string().required('Full Name is required.'),
       email: Yup.string()
-        .email('The email address entered is invalid.')
-        .required('An email address is required.'),
-      company: Yup.string().required('Please specify your company name.'),
-      jobTitle: Yup.string().required('Kindly enter your job title.'),
-      contactNumber: Yup.string().required('A contact number is required.'),
-      promoCode: Yup.string(),
+        .email('Please enter a valid email address.')
+        .required('Email is required.'),
+      company: Yup.string().required('Company Name is required.'),
+      jobTitle: Yup.string().required('Job Title is required.'),
+      contactNumber: Yup.string()
+        .matches(/^[0-9]+$/, 'Contact Number must contain only numbers.')
+        .required('Contact Number is required.'),
     }),
     onSubmit: async (values, formikHelpers) => {
       try {
         await registerMutation.mutateAsync(values);
-        toast.success('Thank you for your registration! We will contact you soon.', {
+        toast.success('Thank you for your interest! We will contact you soon.', {
           icon: '✅',
           duration: 5000,
           style: {
