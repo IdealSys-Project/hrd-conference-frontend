@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import './footer.css';
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import "./Footer.css";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
                       alt="Room of Leaders Logo"
                       width={180}
                       height={60}
-                      style={{ maxHeight: '60px', width: 'auto' }}
+                      style={{ maxHeight: "60px", width: "auto" }}
                     />
                   </Link>
                 </div>
@@ -41,9 +41,15 @@ const Footer: React.FC = () => {
             <div>
               <div className="footer-address">
                 <h5 className="f-title text-white">Event Details</h5>
-                <p className="text text-white">D8-5-1 Pusat Perdagangan Dana 1,</p>
-                <p className="text text-white mt-0">Jalan PJU 1A/46, 47301 Petaling</p>
-                <p className="text text-white mt-0">Jaya, Selangor Darul Ehsan.</p>
+                <p className="text text-white">
+                  D8-5-1 Pusat Perdagangan Dana 1,
+                </p>
+                <p className="text text-white mt-0">
+                  Jalan PJU 1A/46, 47301 Petaling
+                </p>
+                <p className="text text-white mt-0">
+                  Jaya, Selangor Darul Ehsan.
+                </p>
               </div>
             </div>
 
@@ -52,8 +58,8 @@ const Footer: React.FC = () => {
                 <h5 className="f-title text-white">Stay Updated</h5>
                 <div className="footer-website">
                   <p className="text text-white">
-                    <Link 
-                      href="https://www.roomofleaders.com" 
+                    <Link
+                      href="https://www.roomofleaders.com"
                       target="_blank"
                       className="text text-white"
                     >
@@ -77,9 +83,12 @@ const Footer: React.FC = () => {
                 <div className="mt-4 text-center">
                   <h5 className="text-white mb-3">Live Traffic Feed</h5>
                   <div className="live-traffic-container">
-                    <div dangerouslySetInnerHTML={{ 
-                      __html: '<script type="text/javascript" src="https://cdn.livetrafficfeed.com/static/static-counter/live.v2.js?ro=1&tz=Asia%2FKuala_Lumpur&v=1"></script>' 
-                    }} />
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          '<script type="text/javascript" src="https://cdn.livetrafficfeed.com/static/static-counter/live.v2.js?ro=1&tz=Asia%2FKuala_Lumpur&v=1"></script>',
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -88,7 +97,7 @@ const Footer: React.FC = () => {
 
           <div className="flex justify-center">
             <div className="copyright">
-              <button 
+              <button
                 className="text text-white bg-transparent border-0 cursor-pointer"
                 onClick={toggleAnalytics}
                 aria-label="Toggle analytics display"
