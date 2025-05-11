@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import './sponsorship-form.css';
 import { useSponsorshipAction } from './sponsorship-form.action';
 import { getIconSVG } from './svg-mapping';
