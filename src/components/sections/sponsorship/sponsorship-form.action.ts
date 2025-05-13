@@ -35,8 +35,8 @@ export const useSponsorshipAction = () => {
       company: Yup.string().required('Company is required'),
       jobTitle: Yup.string().required('Job Title is required'),
       contactNumber: Yup.string()
-        .matches(/^\+60\d{8,9}$/, 'Must be a valid Malaysian contact number (e.g., +60123456789)')
-        .required('Contact Number is required'),
+        .matches(/^[0-9]+$/, 'Contact Number must contain only numbers.')
+        .required('Contact Number is required.'),
       interest: Yup.string().required('Interest is required'),
     }),
     onSubmit: async (values, formikHelpers) => {
