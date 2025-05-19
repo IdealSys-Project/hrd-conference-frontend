@@ -70,14 +70,13 @@ const Speakers: React.FC = () => {
     },
     {
       id: 7,
-      name: 'Datin Ts. Habsah Nordin',
-      position: 'Head Artificial Intelligence Centre of Excellence',
+      name: 'Farha Burhan',
+      position: 'Talent Development Specialist, PETRONAS Leadership Centre',
       company: 'PETRONAS',
       image: '/assets/images/speakers/speaker-images/PETRONAS_speaker_crop.png',
       companyLogo: '/assets/images/speakers/company-logos/Petronas_logo.png',
-      linkedIn:
-        'https://www.linkedin.com/in/datin-ts-habsah-nordin-cdmp-csfc-caitl%E2%84%A2-4a4aa859/',
-      bio: "Datin Ts. Habsah Nordin leads the PETRONAS Artificial Intelligence Center of Excellence, driving AI strategy, governance, ethics, and technology enablement. She fosters a culture of pervasive AI, creating value organization-wide. Previously, she institutionalized the Data Center of Excellence, advancing data liberation, the Enterprise Data Hub (EDH), and scaling advanced analytics. She also spearheaded PETRONAS' knowledge management digital transformation, integrating structured and unstructured data.\n\nA PETRONAS veteran since 1995, she has held leadership roles in IT, Strategic Planning, Business Development, and more. Habsah holds a B.Sc. in Computer Science from Case Western Reserve University, completed leadership programs at INSEAD and Duke University, and is a certified coach and AI transformation leader.\n\nCurrently, she serves as the President of the DAMA Malaysia Forming Chapter. Recognized for her work in data and AI, she received the Visionary award at the SPARK Asia 200 Digital Leaders Award 2023.",
+      linkedIn: 'https://www.linkedin.com/in/farha-burhan-233952bb/?originalSubdomain=my',
+      bio: 'Farha brings over 20 years of experience in Human Resources and Learning & Development. She specializes in program design, learning experience, and coaching, with extensive exposure in facilitating leadership development across PETRONAS. Farha is also a certified Solution-Focused Coach and has trained in advanced facilitation, design thinking, and instructional design.',
     },
     {
       id: 8,
@@ -148,6 +147,26 @@ const Speakers: React.FC = () => {
       companyLogo: '/assets/images/speakers/company-logos/Tindle_logo.png',
       linkedIn: 'https://sg.linkedin.com/in/eveliene-witjes-83355018',
       bio: "Eveliene Witjes is an entrepreneur and Human Resources Management Specialist with over 20 years of professional experience; of which 16 years in core Human Resource Management roles. She has a proven ability in developing an HR department from ground up and in continuous managing the HR operations of start-up/medium and larger sized companies. She holds a strong command in core HR functions such as Recruitment, Learning & Development, Performance Management, Employee Retention, Payroll, Onboarding and Succession Planning, Policies & Procedures, International Mobility, Health & Safety, Regulatory & Affairs, Legal mediation, Strategic planning and budgeting, Taxation and has helped many different types of organizations with their transformation from scaling to restructuring and M&A's.",
+    },
+    {
+      id: 15,
+      name: 'Syahrul Azmi',
+      position: 'Country Lead for Learning & Leadership Development for Accenture Malaysia',
+      company: 'Accenture',
+      image: '/assets/images/speakers/speaker-images/Accenture_speaker_crop.png',
+      companyLogo: '/assets/images/speakers/company-logos/Accenture_logo.png',
+      linkedIn: 'https://www.linkedin.com/in/syahrulazmi/?originalSubdomain=my',
+      bio: 'Syahrul is a learning, performance and change practitioner with 15+ years of experience in MNCs, Public Listed companies, SMEs, and Start-ups. He is passionate about leadership development, communications and innovation and has worked as an external and internal resource to design, develop and deliver learning strategy, programmes and experiences that impact the bottom line. He enjoys helping leaders transition in their roles from leading people, to leading teams and leading organizations. He’s had experience working with leaders across 5 continents and 10 countries. Today, he is the Country Lead for Learning and Leadership Development for Accenture Malaysia strategizing and facilitating talent development across Strategy, Consulting, Technology, Operations and Song. He is focused on building a pipeline of leaders from the ground up, leveraging immersive technology to accelerate and create great learning experiences, wherever learning happens.',
+    },
+    {
+      id: 16,
+      name: 'Mohammad Iesa Morshidi',
+      position: 'Director, Workforce Management PWC Malaysia',
+      company: 'PWC Malaysia',
+      image: '/assets/images/speakers/speaker-images/PWC_speaker_crop.png',
+      companyLogo: '/assets/images/speakers/company-logos/PWC_logo.png',
+      linkedIn: 'https://www.linkedin.com/in/mohdiesa/?originalSubdomain=my',
+      bio: 'Mohammad Iesa Morshidi is a Director in PwC’s Workforce Management practice. Iesa has more than 29 years of corporate and consulting experience in the public and private sectors, working with governments, multinational corporations, government linked companies and private entities. His clients span various industries such as energy, utilities and infrastructure, diversified conglomerates, financial services, and telecommunications. Prior to joining PwC Malaysia, Iesa held various roles in multinational and Malaysian corporate and consulting organisations.',
     },
   ];
 
