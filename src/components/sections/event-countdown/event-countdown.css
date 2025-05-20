@@ -16,6 +16,16 @@
   width: 100%;
   display: flex;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.header-content-area.loaded-background {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
 }
 
 @media only screen and (min-width: 1400px) {
