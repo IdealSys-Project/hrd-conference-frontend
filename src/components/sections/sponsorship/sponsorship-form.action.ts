@@ -11,8 +11,20 @@ export const useSponsorshipAction = () => {
 
   const registerMutation = useMutation({
     mutationFn: async (data: any) => {
-      const response = await axios.post('/api/sponsorship-inquiries', data);
-      return response.data;
+      const res = await fetch('/api/sponsorship-inquiries', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        throw new Error(`Request failed with status ${res.status}`);
+      }
+
+      const responseData = await res.json();
+      return responseData;
     },
   });
 

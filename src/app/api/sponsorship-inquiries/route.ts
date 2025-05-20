@@ -13,19 +13,8 @@ export async function POST(req: Request) {
     }
 
     const authHeader = `Basic ${Buffer.from(`${user}:${pass}`).toString('base64')}`;
-
-    return NextResponse.json(
-      { success: false, error: 'TEST AUTH HEADER', message: authHeader },
-      { status: 500 }
-    );
-
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
-
     const origin = req.headers.get('origin') || '';
-
-    console.log('API URL ', apiUrl);
-    console.log('Auth Header', authHeader);
-    console.log('Origin ', origin);
 
     const response = await axios.post(`${apiUrl}/sponsorship-inquiries`, data, {
       headers: {
