@@ -7,11 +7,18 @@ export async function POST(req: Request) {
 
     const user = process.env.BASIC_AUTH_USER;
     const pass = process.env.BASIC_AUTH_PASS;
+
     if (!user || !pass) {
       return NextResponse.json({ success: false, error: 'Internal Server Error' }, { status: 500 });
     }
 
     const authHeader = `Basic ${Buffer.from(`${user}:${pass}`).toString('base64')}`;
+
+    return NextResponse.json(
+      { success: false, error: 'TEST AUTH HEADER', message: authHeader },
+      { status: 500 }
+    );
+
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
     const origin = req.headers.get('origin') || '';
