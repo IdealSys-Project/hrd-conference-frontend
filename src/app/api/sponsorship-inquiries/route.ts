@@ -16,6 +16,10 @@ export async function POST(req: Request) {
 
     const origin = req.headers.get('origin') || '';
 
+    console.log('API URL ', apiUrl);
+    console.log('Auth Header', authHeader);
+    console.log('Origin ', origin);
+
     const response = await axios.post(`${apiUrl}/sponsorship-inquiries`, data, {
       headers: {
         Authorization: authHeader,
