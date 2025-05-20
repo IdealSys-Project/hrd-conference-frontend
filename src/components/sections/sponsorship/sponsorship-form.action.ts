@@ -1,7 +1,6 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useMutation } from '@tanstack/react-query';
-import axios from 'axios';
 import toast from 'react-hot-toast';
 import { get, pick } from 'lodash';
 import useSponsorshipFormStore from '@/shared/stores/useSponsorshipFormStore';
