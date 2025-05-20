@@ -11,7 +11,7 @@ export const useSponsorshipAction = () => {
 
   const registerMutation = useMutation({
     mutationFn: async (data: any) => {
-      const response = await axios.post('/next-api/sponsorship-inquiries', data);
+      const response = await axios.post('/api/sponsorship-inquiries', data);
       return response.data;
     },
   });

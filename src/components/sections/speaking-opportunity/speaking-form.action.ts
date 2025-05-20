@@ -17,7 +17,7 @@ export interface SpeakingFormValues {
 export const useSpeakingForm = () => {
   const registerMutation = useMutation({
     mutationFn: async (data: SpeakingFormValues) => {
-      const response = await axios.post('/next-api/speaking-inquiries', data);
+      const response = await axios.post('/api/speaking-inquiries', data);
       return response.data;
     },
   });

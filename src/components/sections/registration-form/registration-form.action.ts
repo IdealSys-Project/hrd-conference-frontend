@@ -18,7 +18,7 @@ export interface RegistrationFormValues {
 export const useRegistrationForm = () => {
   const registerMutation = useMutation({
     mutationFn: async (data: RegistrationFormValues) => {
-      const response = await axios.post('/next-api/registration-submissions', data);
+      const response = await axios.post('/api/registration-submissions', data);
       return response.data;
     },
   });
