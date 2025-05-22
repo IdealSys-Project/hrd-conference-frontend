@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "./Footer.css";
@@ -8,6 +8,20 @@ import "./Footer.css";
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const [showAnalytics, setShowAnalytics] = useState(false);
+
+  useEffect(() => {
+    if (showAnalytics) {
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src =
+        "https://cdn.livetrafficfeed.com/static/static-counter/live.v2.js?ro=1&tz=Asia%2FKuala_Lumpur&v=1";
+
+      const counterContainer = document.getElementById("LTF_counter");
+      if (counterContainer) {
+        counterContainer.appendChild(script);
+      }
+    }
+  }, [showAnalytics]);
 
   const toggleAnalytics = () => {
     setShowAnalytics(!showAnalytics);
@@ -76,7 +90,6 @@ const Footer: React.FC = () => {
 
       <div className="footer-copyright">
         <div className="container mx-auto px-4">
-          {/* Analytics Section (Hidden by default) */}
           {showAnalytics && (
             <div id="simple-analytics" className="mb-5">
               <div className="analytics-container">
@@ -84,11 +97,16 @@ const Footer: React.FC = () => {
                   <h5 className="text-white mb-3">Live Traffic Feed</h5>
                   <div className="live-traffic-container">
                     <div
-                      dangerouslySetInnerHTML={{
-                        __html:
-                          '<script type="text/javascript" src="https://cdn.livetrafficfeed.com/static/static-counter/live.v2.js?ro=1&tz=Asia%2FKuala_Lumpur&v=1"></script>',
-                      }}
-                    />
+                      id="LTF_counter"
+                      className="min-w-[200px] min-h-[80px] flex items-center justify-center"
+                    >
+                      <a
+                        href="https://livetrafficfeed.com/website-counter"
+                        data-row="0"
+                        data-col="0"
+                        data-min-size="100"
+                      ></a>
+                    </div>
                   </div>
                 </div>
               </div>
