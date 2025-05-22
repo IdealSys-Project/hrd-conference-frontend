@@ -25,7 +25,7 @@ const EventCountdown: React.FC = () => {
     const headerContentArea = document.querySelector('.header-content-area');
     if (headerContentArea) {
       const htmlElement = headerContentArea as HTMLElement;
-      htmlElement.style.backgroundImage = `url('/assets/images/event-countdown/ai_brochure_3.png')`;
+      htmlElement.style.backgroundImage = `url('/assets/images/event-countdown/ai_brochure_3.jpg')`;
       setIsImageLoaded(true);
     }
 
@@ -90,7 +90,7 @@ const EventCountdown: React.FC = () => {
     <div className="home-background">
       {/* Preload the background image */}
       <Image
-        src="/assets/images/event-countdown/ai_brochure_3.png"
+        src="/assets/images/event-countdown/ai_brochure_3.jpg"
         alt="Background"
         width={1920}
         height={1080}
@@ -103,7 +103,6 @@ const EventCountdown: React.FC = () => {
           isImageLoaded ? 'loaded-background' : ''
         }`}
         style={{
-          backgroundImage: "url('/assets/images/event-countdown/ai_brochure_3.png')",
           opacity: isImageLoaded ? 1 : 0,
           transition: 'opacity 0.3s ease-in-out',
         }}
