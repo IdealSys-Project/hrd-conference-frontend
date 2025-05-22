@@ -118,7 +118,7 @@ const SpeakingForm: React.FC = () => {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url("/assets/images/speaker-opportunity/ai_brochure_1.png")',
+          backgroundImage: 'url("/assets/images/speaker-opportunity/ai_brochure_1.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
