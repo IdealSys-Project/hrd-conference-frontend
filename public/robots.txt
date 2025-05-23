@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://hrdconference.com
+
+# Sitemaps
+Sitemap: https://hrdconference.com/sitemap.xml
