@@ -1,31 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "./Footer.css";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const [showAnalytics, setShowAnalytics] = useState(false);
-
-  useEffect(() => {
-    if (showAnalytics) {
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src =
-        "https://cdn.livetrafficfeed.com/static/static-counter/live.v2.js?ro=1&tz=Asia%2FKuala_Lumpur&v=1";
-
-      const counterContainer = document.getElementById("LTF_counter");
-      if (counterContainer) {
-        counterContainer.appendChild(script);
-      }
-    }
-  }, [showAnalytics]);
-
-  const toggleAnalytics = () => {
-    setShowAnalytics(!showAnalytics);
-  };
 
   return (
     <footer id="footer" className="footer-area">
@@ -90,38 +71,9 @@ const Footer: React.FC = () => {
 
       <div className="footer-copyright">
         <div className="container mx-auto px-4">
-          {showAnalytics && (
-            <div id="simple-analytics" className="mb-5">
-              <div className="analytics-container">
-                <div className="mt-4 text-center">
-                  <h5 className="text-white mb-3">Live Traffic Feed</h5>
-                  <div className="live-traffic-container">
-                    <div
-                      id="LTF_counter"
-                      className="min-w-[200px] min-h-[80px] flex items-center justify-center"
-                    >
-                      <a
-                        href="https://livetrafficfeed.com/website-counter"
-                        data-row="0"
-                        data-col="0"
-                        data-min-size="100"
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
           <div className="flex justify-center">
             <div className="copyright">
-              <button
-                className="text text-white bg-transparent border-0 cursor-pointer"
-                onClick={toggleAnalytics}
-                aria-label="Toggle analytics display"
-              >
-                &copy; Copyright {currentYear} - Room of Leaders.
-              </button>
+              <p className="text text-white">&copy; Copyright {currentYear} - Room of Leaders.</p>
             </div>
           </div>
         </div>
