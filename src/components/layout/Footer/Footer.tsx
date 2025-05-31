@@ -3,10 +3,18 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useAnalytics } from "@/lib/firebase/analytics";
 import "./Footer.css";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const {
+    analytics,
+    loading,
+    error,
+    showAnalytics,
+    toggleAnalytics
+  } = useAnalytics();
 
   return (
     <footer id="footer" className="footer-area">
@@ -72,8 +80,49 @@ const Footer: React.FC = () => {
       <div className="footer-copyright">
         <div className="container mx-auto px-4">
           <div className="flex justify-center">
-            <div className="copyright">
-              <p className="text text-white">&copy; Copyright {currentYear} - Room of Leaders.</p>
+            <div className="copyright relative">
+              <button 
+                onClick={toggleAnalytics}
+                className="text text-white hover:text-blue-300 transition-colors focus:outline-none"
+                aria-label="Toggle analytics"
+              >
+                &copy; Copyright {currentYear} - Room of Leaders.
+              </button>
+              
+              {showAnalytics && (
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 w-72 bg-gray-800 rounded-lg shadow-xl z-50 overflow-hidden">
+                  <div className="p-4">
+                    <h3 className="text-white font-medium text-center text-sm mb-3">Page Views</h3>
+                    {loading ? (
+                      <div className="text-center text-gray-400 text-sm py-2">Loading...</div>
+                    ) : error ? (
+                      <div className="text-center text-red-400 text-sm py-2">{error}</div>
+                    ) : (
+                      <div className="grid grid-cols-2 gap-3">
+                        {analytics && Object.entries(analytics)
+                          .filter(([key]) => key !== 'lastResetDate' && key !== 'lastUpdated')
+                          .map(([key, value]) => (
+                            <div key={key} className="bg-gray-700/50 p-3 rounded text-center">
+                              <div className="text-blue-400 text-xs uppercase tracking-wider">
+                                {key.replace(/([A-Z])/g, ' $1').trim()}
+                              </div>
+                              <div className="text-white font-bold text-lg mt-1">
+                                {typeof value === 'number' ? value.toLocaleString() : '0'}
+                              </div>
+                            </div>
+                          ))}
+                      </div>
+                    )}
+                    <div className="text-gray-400 text-xs text-center mt-3">
+                      Last updated: {new Date().toLocaleDateString('en-GB')}, {new Date().toLocaleTimeString('en-GB', {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: false
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
