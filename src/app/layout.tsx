@@ -15,22 +15,58 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'HRD Conference 2025',
-  description: 'Second Annual Human Resource Development Conference 2025',
+  metadataBase: new URL('https://hrdconference.com'),
+  title: {
+    default: 'HRD Conference 2025 | Premier HR Conference',
+    template: '%s | HRD Conference 2025'
+  },
+  description: 'Join the leading HR professionals at HRD Conference 2025. Discover the latest trends, network with experts, and transform your HR strategy.',
+  keywords: ['HRD Conference', 'HR Conference 2025', 'Human Resources Development', 'HR Professionals', 'HR Summit'],
+  authors: [{ name: 'HRD Conference Team' }],
+  creator: 'HRD Conference',
+  publisher: 'HRD Conference',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: '/assets/icons/favicon.jpeg',
+    apple: '/assets/icons/favicon.jpeg',
   },
   openGraph: {
-    title: 'HRD Conference 2025',
-    description: 'Second Annual Human Resource Development Conference 2025',
+    title: 'HRD Conference 2025 | Premier HR Conference',
+    description: 'Join the leading HR professionals at HRD Conference 2025. Discover the latest trends, network with experts, and transform your HR strategy.',
+    url: 'https://hrdconference.com',
+    siteName: 'HRD Conference',
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
         url: '/assets/icons/favicon.jpeg',
         width: 300,
         height: 300,
+        alt: 'HRD Conference 2025 Logo',
       },
     ],
-    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'HRD Conference 2025',
+    description: 'Join the leading HR professionals at HRD Conference 2025',
+    creator: '@hrdconference',
+    images: ['/assets/icons/favicon.jpeg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
