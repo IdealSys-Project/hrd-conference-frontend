@@ -16,6 +16,9 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hrdconference.com'),
+  alternates: {
+    canonical: 'https://hrdconference.com',
+  },
   title: {
     default: 'HRD Conference 2025 | Premier HR Conference',
     template: '%s | HRD Conference 2025'
