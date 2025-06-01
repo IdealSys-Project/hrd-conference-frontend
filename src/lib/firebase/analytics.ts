@@ -1,63 +1,59 @@
 import { useState, useCallback, useEffect } from 'react';
-import { doc, getDoc, updateDoc, increment, serverTimestamp, setLogLevel } from 'firebase/firestore';
+import { 
+  doc, 
+  getDoc, 
+  setDoc, 
+  increment, 
+  serverTimestamp, 
+  Timestamp 
+} from 'firebase/firestore';
 import { db } from './config';
-
-// Optional: Reduce Firebase logs in production
-if (process.env.NODE_ENV === 'production') {
-  setLogLevel('error');
-}
 
 export type AnalyticsData = {
   today: number;
   yesterday: number;
   thisMonth: number;
   thisYear: number;
-  lastResetDate?: string;
-  lastUpdated?: any;
+  lastResetDate: Timestamp | string;
+  lastUpdated: Timestamp | string;
 };
 
 const COLLECTION_NAME = 'hrd_conference_traffic';
 
-/**
- * Logs a page view and updates analytics counters
- */
 export const logPageView = async (): Promise<void> => {
   try {
     const now = new Date();
     const today = now.toISOString().split('T')[0];
     const docRef = doc(db, COLLECTION_NAME, 'global');
+    
+    // Get current data
     const docSnap = await getDoc(docRef);
-
-    // Check and reset daily counter if needed
-    if (docSnap.exists()) {
-      const data = docSnap.data();
-      if (data.lastResetDate !== today) {
-        await updateDoc(docRef, {
-          yesterday: data.today || 0,
-          today: 0,
-          lastResetDate: today,
-          lastUpdated: serverTimestamp()
-        } as Record<string, any>);
-      }
-    }
-
-    // Log the page view
+    const data = docSnap.exists() ? docSnap.data() : null;
+    const lastReset = data?.lastResetDate || today;
+    
+    const isNewDay = lastReset !== today;
+    const isFirstDayOfMonth = now.getDate() === 1;
+    
+    // All updates in one place
     const updateData: Record<string, any> = {
-      today: increment(1),
-      thisMonth: increment(1),
+      today: isNewDay ? 1 : increment(1),
       thisYear: increment(1),
-      lastUpdated: serverTimestamp()
+      lastUpdated: serverTimestamp(),
+      
+      ...(isNewDay && {
+        yesterday: data?.today || 0,
+        lastResetDate: serverTimestamp(),
+        thisMonth: isFirstDayOfMonth ? 1 : increment(1)
+      }),
+      
+      // Only update thisMonth if not a new day
+      ...(!isNewDay && {
+        thisMonth: increment(1)
+      })
     };
-
-    // Set lastResetDate from document or use today's date
-    const docData = docSnap.data();
-    const finalUpdateData = {
-      ...updateData,
-      lastResetDate: docData?.lastResetDate || today
-    };
-
-    await updateDoc(docRef, finalUpdateData);
-
+    
+    // Update document
+    await setDoc(docRef, updateData, { merge: true });
   } catch (error) {
     if (process.env.NODE_ENV !== 'production') {
       console.error('Error logging page view:', error);
@@ -93,10 +89,6 @@ export const fetchAnalytics = async (): Promise<AnalyticsData | null> => {
   }
 };
 
-/**
- * Custom hook for managing analytics state and UI
- */
-// Track if page view has been logged in the current session
 let pageViewLogged = false;
 
 export const useAnalytics = () => {
@@ -126,13 +118,11 @@ export const useAnalytics = () => {
   }, []);
 
   useEffect(() => {
-    // Only log page view once per session
     if (!pageViewLogged) {
       logPageView();
       pageViewLogged = true;
     }
     
-    // Load analytics when showing the panel
     if (showAnalytics) {
       loadAnalytics();
     }
