@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
                           .map(([key, value]) => (
                             <div key={key} className="bg-gray-700/50 p-3 rounded text-center">
                               <div className="text-blue-400 text-xs uppercase tracking-wider">
-                                {key.replace(/([A-Z])/g, ' $1').trim()}
+                                {key === 'total' ? 'Total' : key.replace(/([A-Z])/g, ' $1').trim()}
                               </div>
                               <div className="text-white font-bold text-lg mt-1">
                                 {typeof value === 'number' ? value.toLocaleString() : '0'}
