@@ -13,7 +13,7 @@ export type AnalyticsData = {
   today: number;
   yesterday: number;
   thisMonth: number;
-  thisYear: number;
+  total: number;
   lastResetDate: Timestamp | string;
   lastUpdated: Timestamp | string;
 };
@@ -44,7 +44,7 @@ export const logPageView = async (): Promise<void> => {
     
     const updateData: Record<string, any> = {
       today: isNewDay ? 1 : increment(1),
-      thisYear: increment(1),
+      total: increment(1),
       lastUpdated: serverTimestamp(),
       
       ...(isNewDay && {
@@ -81,7 +81,7 @@ export const fetchAnalytics = async (): Promise<AnalyticsData | null> => {
         today: data.today || 0,
         yesterday: data.yesterday || 0,
         thisMonth: data.thisMonth || 0,
-        thisYear: data.thisYear || 0,
+        total: data.total || 0,
         lastResetDate: data.lastResetDate || Timestamp.fromDate(now),
         lastUpdated: data.lastUpdated || Timestamp.fromDate(now)
       };
@@ -92,7 +92,7 @@ export const fetchAnalytics = async (): Promise<AnalyticsData | null> => {
       today: 0,
       yesterday: 0,
       thisMonth: 0,
-      thisYear: 0,
+      total: 0,
       lastResetDate: Timestamp.fromDate(now),
       lastUpdated: Timestamp.fromDate(now)
     };
