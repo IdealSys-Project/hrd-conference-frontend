@@ -14,32 +14,23 @@ export type AnalyticsData = {
   yesterday: number;
   thisMonth: number;
   total: number;
-  lastResetDate: Timestamp | string;
+  lastResetDate: string;
   lastUpdated: Timestamp | string;
 };
 
 const COLLECTION_NAME = 'hrd_conference_traffic';
 
-//Compare if two dates are on the same day
-const isSameDay = (date1: Date, date2: Date): boolean => {
-  return date1.getFullYear() === date2.getFullYear() &&
-         date1.getMonth() === date2.getMonth() &&
-         date1.getDate() === date2.getDate();
-};
-
 export const logPageView = async (): Promise<void> => {
   try {
     const now = new Date();
+    const today = now.toISOString().slice(0, 10);
     const docRef = doc(db, COLLECTION_NAME, 'global');
     const docSnap = await getDoc(docRef);
     const data = docSnap.exists() ? docSnap.data() : null;
     
-    // Convert lastResetDate to Date for comparison
-    const lastResetDate = data?.lastResetDate?.toDate ? 
-      data.lastResetDate.toDate() : 
-      new Date(data?.lastResetDate || now);
-    
-    const isNewDay = !isSameDay(now, lastResetDate);
+    // Get last reset date as string (YYYY-MM-DD) or use today if not exists
+    const lastReset = data?.lastResetDate || today;
+    const isNewDay = lastReset !== today;
     const isFirstDayOfMonth = now.getDate() === 1;
     
     const updateData: Record<string, any> = {
@@ -49,7 +40,7 @@ export const logPageView = async (): Promise<void> => {
       
       ...(isNewDay && {
         yesterday: data?.today || 0,
-        lastResetDate: serverTimestamp(),
+        lastResetDate: today,
         thisMonth: isFirstDayOfMonth ? 1 : increment(1)
       }),
       
@@ -82,7 +73,7 @@ export const fetchAnalytics = async (): Promise<AnalyticsData | null> => {
         yesterday: data.yesterday || 0,
         thisMonth: data.thisMonth || 0,
         total: data.total || 0,
-        lastResetDate: data.lastResetDate || Timestamp.fromDate(now),
+        lastResetDate: data.lastResetDate || now.toISOString().slice(0, 10),
         lastUpdated: data.lastUpdated || Timestamp.fromDate(now)
       };
     }
@@ -93,7 +84,7 @@ export const fetchAnalytics = async (): Promise<AnalyticsData | null> => {
       yesterday: 0,
       thisMonth: 0,
       total: 0,
-      lastResetDate: Timestamp.fromDate(now),
+      lastResetDate: now.toISOString().slice(0, 10),
       lastUpdated: Timestamp.fromDate(now)
     };
   } catch (error) {
