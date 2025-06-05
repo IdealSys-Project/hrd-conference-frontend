@@ -8,6 +8,12 @@ import {
   Timestamp 
 } from 'firebase/firestore';
 import { db } from './config';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 export type AnalyticsData = {
   today: number;
@@ -22,8 +28,8 @@ const COLLECTION_NAME = 'hrd_conference_traffic';
 
 export const logPageView = async (): Promise<void> => {
   try {
-    const now = new Date();
-    const today = now.toISOString().slice(0, 10);
+    const now = dayjs().tz('Asia/Kuala_Lumpur');
+    const today = now.format('YYYY-MM-DD');
     const docRef = doc(db, COLLECTION_NAME, 'global');
     const docSnap = await getDoc(docRef);
     const data = docSnap.exists() ? docSnap.data() : null;
@@ -31,7 +37,7 @@ export const logPageView = async (): Promise<void> => {
     // Get last reset date as string (YYYY-MM-DD) or use today if not exists
     const lastReset = data?.lastResetDate || today;
     const isNewDay = lastReset !== today;
-    const isFirstDayOfMonth = now.getDate() === 1;
+    const isFirstDayOfMonth = now.date() === 1;
     
     const updateData: Record<string, any> = {
       today: isNewDay ? 1 : increment(1),
@@ -63,29 +69,30 @@ export const fetchAnalytics = async (): Promise<AnalyticsData | null> => {
   try {
     const docRef = doc(db, COLLECTION_NAME, 'global');
     const docSnap = await getDoc(docRef);
+
+    const nowDate = dayjs().tz('Asia/Kuala_Lumpur');
+    const today = nowDate.format('YYYY-MM-DD');
     
     if (docSnap.exists()) {
       const data = docSnap.data();
-      
-      const now = new Date();
+
       return {
         today: data.today || 0,
         yesterday: data.yesterday || 0,
         thisMonth: data.thisMonth || 0,
         total: data.total || 0,
-        lastResetDate: data.lastResetDate || now.toISOString().slice(0, 10),
-        lastUpdated: data.lastUpdated || Timestamp.fromDate(now)
+        lastResetDate: data.lastResetDate || today,
+        lastUpdated: data.lastUpdated || Timestamp.fromDate(nowDate.toDate())
       };
     }
     
-    const now = new Date();
     return {
       today: 0,
       yesterday: 0,
       thisMonth: 0,
       total: 0,
-      lastResetDate: now.toISOString().slice(0, 10),
-      lastUpdated: Timestamp.fromDate(now)
+      lastResetDate: today,
+      lastUpdated: Timestamp.fromDate(nowDate.toDate())
     };
   } catch (error) {
     if (process.env.NODE_ENV !== 'production') {
