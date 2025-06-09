@@ -10,6 +10,7 @@ import OurSponsors from '@/components/sections/our-sponsors/our-sponsors';
 import MediaPartners from '@/components/sections/media-partners/media-partners';
 import RegistrationForm from '@/components/sections/registration-form/registration-form';
 import EventHighlights from '@/components/sections/event-highlights/event-highlights';
+import Exhibitors from '@/components/sections/exhibitors/exhibitors';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <TargetAudience />
       <Speakers />
       <MediaPartners />
+      <Exhibitors />
       <SponsorshipForm />
       <SpeakingForm />
       <OurSponsors />
