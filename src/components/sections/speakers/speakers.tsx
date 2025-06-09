@@ -113,8 +113,8 @@ const Speakers: React.FC = () => {
       name: 'Najmie Nordin',
       position: 'Chief Talent Officer',
       company: 'Johor Corporation',
-      image: '/assets/images/speakers/speaker-images/JCorp_crop.png',
-      companyLogo: '/assets/images/speakers/company-logos/JCorp_logo.png',
+      image: '/assets/images/speakers/speaker-images/JCorporation_speaker_crop.png',
+      companyLogo: '/assets/images/speakers/company-logos/JCorporation_logo.png',
       linkedIn: 'https://www.linkedin.com/in/najmienoordin/',
       bio: 'Najmie holds a Manchester Global MBA from the University of Manchester, alongside a Bachelor of Law (Hons) from Universiti Teknologi MARA, reflecting a formidable academic foundation. His skill set spans various domains, encompassing adeptness in people management, strategic sales planning, dynamic branding, and innovative marketing strategies.\n\nBefore embarking on his journey with JCorp, Najmie played pivotal roles at Cosmopoint Sdn Bhd, including Chief Executive Officer (Group) and Chief Operating Officer (Group). His track record underscores a commitment to driving organisational excellence and fostering sustainable growth, marking him as a formidable force in the corporate landscape.',
     },
@@ -167,6 +167,16 @@ const Speakers: React.FC = () => {
       companyLogo: '/assets/images/speakers/company-logos/PWC_logo.png',
       linkedIn: 'https://www.linkedin.com/in/mohdiesa/?originalSubdomain=my',
       bio: 'Mohammad Iesa Morshidi is a Director in PwC’s Workforce Management practice. Iesa has more than 29 years of corporate and consulting experience in the public and private sectors, working with governments, multinational corporations, government linked companies and private entities. His clients span various industries such as energy, utilities and infrastructure, diversified conglomerates, financial services, and telecommunications. Prior to joining PwC Malaysia, Iesa held various roles in multinational and Malaysian corporate and consulting organisations.',
+    },
+    {
+      id: 17,
+      name: 'Aiza Azreen',
+      position: 'Co-founder, Evolve Precision Healthcare',
+      company: 'Evolve Precision Healthcare',
+      image: '/assets/images/speakers/speaker-images/Evolve_Precision_Healthcare_speaker_crop.png',
+      companyLogo: '/assets/images/speakers/company-logos/Evolve_Precision_Healthcare_logo.png',
+      linkedIn: 'https://www.linkedin.com/in/aizaazreen/',
+      bio: 'Aiza Azreen is a strategic C-Suite executive with 25+ years leading digital transformation across healthcare, fintech, and public sectors. She co-founded Evolve Precision Healthcare and advises UK-based ELIAS Health, an AI platform optimizing clinical workflows. As CEO of MySejahtera, she scaled the platform to 50M+ users. Aiza also pioneered Malaysia’s fintech landscape by launching Boost eWallet. A champion of human intelligence, she advocates for responsible AI that empowers people, not replaces them—driving inclusive innovation where human insight remains at the core.',
     },
   ];
 
