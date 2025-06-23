@@ -178,6 +178,36 @@ const Speakers: React.FC = () => {
       linkedIn: 'https://www.linkedin.com/in/aizaazreen/',
       bio: 'Aiza Azreen is a strategic C-Suite executive with 25+ years leading digital transformation across healthcare, fintech, and public sectors. She co-founded Evolve Precision Healthcare and advises UK-based ELIAS Health, an AI platform optimizing clinical workflows. As CEO of MySejahtera, she scaled the platform to 50M+ users. Aiza also pioneered Malaysia’s fintech landscape by launching Boost eWallet. A champion of human intelligence, she advocates for responsible AI that empowers people, not replaces them—driving inclusive innovation where human insight remains at the core.',
     },
+    {
+      id: 18,
+      name: 'Nic Chambers',
+      position: 'Managing Director',
+      company: 'Michael Page',
+      image: '/assets/images/speakers/speaker-images/Michael_Page_speaker_crop.png',
+      companyLogo: '/assets/images/speakers/company-logos/Michael_Page_logo_1.png',
+      linkedIn: 'https://www.linkedin.com/in/nic-chambers-bbb74a7/?originalSubdomain=my',
+      bio: 'Nic Chambers is the Managing Director of PageGroup Malaysia. He is an experienced recruitment leader with 20 years recruitment experience across the UK, Australia and most recently Malaysia. He started his career in the UK before joining Michael Page Perth in 2006. In 2016 Nic moved to Malaysia where he now leads PageGroup Malaysia, overseeing a team of 100 consultants. He is also a board member of British Malaysia Chamber of Commerce and chairs BMCCs Talent Network.',
+    },
+    {
+      id: 19,
+      name: 'Monir Azzouzi',
+      position: 'Managing Partner',
+      company: 'Futuresparx',
+      image: '/assets/images/speakers/speaker-images/Futuresparx_speaker_crop.png',
+      companyLogo: '/assets/images/speakers/company-logos/Futuresparx_logo.png',
+      linkedIn: 'https://www.linkedin.com/in/monirazzouzi/?originalSubdomain=my',
+      bio: 'Monir Azzouzi is a visionary leader in digital and cultural transformation, organisational development, and human resources. With a distinguished career across Europe and Asia, Monir has led dynamic teams in both digital and corporate spheres, driven by his entrepreneurial mindset and strategic acumen. As the Founder and Managing Partner of Futuresparx, Monir innovates at the intersection of technology and human capital, redefining workplaces through groundbreaking approaches to people experience, organisational development by leveraging AI.',
+    },
+    {
+      id: 20,
+      name: 'Hilson Yeap',
+      position: 'Founder & CEO EduAction.',
+      company: 'EduAction',
+      image: '/assets/images/speakers/speaker-images/Eduaction_speaker_crop.png',
+      companyLogo: '/assets/images/speakers/company-logos/Eduaction_logo.png',
+      linkedIn: 'https://www.linkedin.com/in/hilsonyeap/?originalSubdomain=my',
+      bio: 'Hilson Yeap is the founder and CEO of EduAction. He has 15 years of experience in the learning and development (L&D) industry, specializes in the area of team building, business development & gamification. He is the author of the best sought after training & development e-book, “7 reasons why training is not effective and what you can do about it”. He has been practicing & research on human capital development for the past 15 years and current Secretary of Experiential Learning Institute (ELI), Nevada USA. He has a degree in Food Marketing from University Putra Malaysia, a lifetime certification. member of Frontier Trainings USA, the world’s #1 business experiential learning provider & a certified trainer from PSMB TTT.',
+    },
   ];
 
   const [selectedSpeaker, setSelectedSpeaker] = useState<(typeof speakers)[0] | null>(null);
