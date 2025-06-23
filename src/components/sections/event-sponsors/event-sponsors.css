@@ -1,0 +1,183 @@
+.event-sponsors-section {
+  background-color: #ffffff;
+}
+
+.event-sponsor-grid {
+  display: grid;
+  grid-template-columns: minmax(250px, 300px);
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .event-sponsor-grid {
+    grid-template-columns: repeat(1, minmax(250px, 300px));
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.event-sponsor-logo-container {
+  cursor: pointer;
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  border: 1px solid rgba(107, 70, 193, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.03),
+              0 0 0 1px rgba(107, 70, 193, 0.1);
+}
+
+.event-sponsor-logo-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(107, 70, 193, 0.1),
+              0 10px 10px -5px rgba(107, 70, 193, 0.04),
+              0 0 0 1px rgba(107, 70, 193, 0.2);
+}
+
+.event-sponsor-logo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+}
+
+.event-sponsor-social-links {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.event-sponsor-logo-container:hover .event-sponsor-social-links {
+  opacity: 1;
+  bottom: 0;
+}
+
+.social-icon {
+  background-color: #6B46C1;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+.social-icon:hover {
+  background-color: #553C9A;
+  transform: scale(1.1);
+}
+
+.event-sponsor-level {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 14px 6px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  backdrop-filter: blur(2px);
+  min-width: 120px;
+}
+
+.event-sponsor-level svg {
+  flex-shrink: 0;
+  font-size: 0.9em;
+  margin-right: 2px;
+}
+
+.event-sponsor-level span {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-sponsor-level.bronze {
+  background: linear-gradient(135deg, rgba(205, 127, 50, 0.9) 0%, rgba(139, 90, 43, 0.95) 100%);
+  color: #FFF8E7;
+  border: 1px solid #8B5A2B;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.event-sponsor-level.bronze svg {
+  color: #FFD700;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.event-sponsor-level.silver {
+  background: linear-gradient(135deg, rgba(224, 224, 224, 0.95) 0%, rgba(160, 160, 160, 0.95) 100%);
+  color: #2D3748;
+  border: 1px solid #E2E8F0;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.event-sponsor-level.silver svg {
+  color: #F7FAFC;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
+}
+
+.event-sponsor-level.gold {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
+  color: #5E4200;
+  border: 1px solid #FFD700;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+}
+
+.event-sponsor-level.gold svg {
+  color: #FFFFFF;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.event-sponsor-logo-container:hover .event-sponsor-level {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-sponsor-level::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  opacity: 0;
+  transform: rotate(30deg);
+  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: all 0.4s ease;
+}
+
+.event-sponsor-logo-container:hover .event-sponsor-level::after {
+  left: 120%;
+  opacity: 1;
+}

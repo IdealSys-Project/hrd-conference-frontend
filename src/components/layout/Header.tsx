@@ -63,8 +63,8 @@ const Header = () => {
   const menuItems = [
     { text: 'Home', href: '#home' },
     { text: 'Speakers', href: '#speakers' },
-    { text: 'Sponsors', href: '#sponsors' },
-    { text: 'Media Partners', href: '#media-partners' },
+    { text: 'Sponsors', href: '#event-sponsors' },
+    { text: 'Partners', href: '#association-partners' },
     { text: 'Speaking Opportunity', href: '#speaking-opportunity' },
     { text: 'Registration', href: '#registration' },
   ];
