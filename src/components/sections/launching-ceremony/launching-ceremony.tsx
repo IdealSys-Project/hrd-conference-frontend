@@ -9,7 +9,7 @@ const LaunchingCeremony: React.FC = () => {
     <section id="launching-ceremony" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-purple-800 mb-4 transition-colors duration-300 hover:text-blue-600">
+          <h2 className="text-4xl font-bold text-purple-800 mb-4">
             Launching Ceremony
           </h2>
         </div>
@@ -32,10 +32,10 @@ const LaunchingCeremony: React.FC = () => {
           </div>
           
           <div className="text-center transform transition-all duration-300 hover:scale-105">
-            <h3 className="text-2xl font-bold text-gray-800 mb-2 transition-colors duration-300 hover:text-blue-700">
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">
               YAB DATO&apos; SRI HAJI FADILLAH BIN HAJI YUSOF
             </h3>
-            <div className="font-medium text-gray-600 transition-colors duration-300 hover:text-blue-600">
+            <div className="font-medium text-gray-600">
               Deputy Prime Minister II
             </div>
           </div>
