@@ -9,6 +9,7 @@ import SponsorshipForm from '@/components/sections/sponsorship/sponsorship-form'
 import SpeakingForm from '@/components/sections/speaking-opportunity/speaking-form';
 import OurSponsors from '@/components/sections/our-sponsors/our-sponsors';
 import MediaPartners from '@/components/sections/media-partners/media-partners';
+import EventSponsors from '@/components/sections/event-sponsors/event-sponsors';
 import RegistrationForm from '@/components/sections/registration-form/registration-form';
 import EventHighlights from '@/components/sections/event-highlights/event-highlights';
 import Exhibitors from '@/components/sections/exhibitors/exhibitors';
@@ -23,6 +24,7 @@ export default function Home() {
       <TargetAudience />
       <LaunchingCeremony />
       <Speakers />
+      <EventSponsors />
       <MediaPartners />
       <Exhibitors />
       <SponsorshipForm />
