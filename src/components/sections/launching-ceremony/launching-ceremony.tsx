@@ -9,31 +9,33 @@ const LaunchingCeremony: React.FC = () => {
     <section id="launching-ceremony" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-purple-800 mb-4">Launching Ceremony</h2>
+          <h2 className="text-4xl font-bold text-purple-800 mb-4 transition-colors duration-300 hover:text-blue-600">
+            Launching Ceremony
+          </h2>
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="relative w-64 h-64 md:w-72 md:h-72 mb-8">
-            <div className="absolute inset-0 rounded-full overflow-hidden p-1 bg-gradient-to-r from-blue-600 to-purple-600 shadow-xl">
-              <div className="relative w-full h-full rounded-full overflow-hidden bg-white">
+          <div className="relative w-64 h-64 md:w-72 md:h-72 mb-8 group">
+            <div className="absolute inset-0 rounded-full overflow-hidden p-1 bg-gradient-to-r from-blue-600 to-purple-600 shadow-xl transition-all duration-500 group-hover:from-blue-500 group-hover:to-purple-500 group-hover:shadow-2xl">
+              <div className="relative w-full h-full rounded-full overflow-hidden bg-white transition-transform duration-500 group-hover:scale-95">
                 <Image
                   src="/assets/images/launching-ceremony/yb_fadhilah.png"
                   alt="YAB DATO' SRI HAJI FADILLAH BIN HAJI YUSOF"
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
               </div>
             </div>
-            <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-600 to-blue-400 opacity-20 blur-md -z-10" />
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-600 to-blue-400 opacity-20 blur-md -z-10 transition-all duration-500 group-hover:opacity-30 group-hover:duration-300" />
           </div>
           
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-800 mb-2">
+          <div className="text-center transform transition-all duration-300 hover:scale-105">
+            <h3 className="text-2xl font-bold text-gray-800 mb-2 transition-colors duration-300 hover:text-blue-700">
               YAB DATO&apos; SRI HAJI FADILLAH BIN HAJI YUSOF
             </h3>
-            <div className="font-medium">
+            <div className="font-medium text-gray-600 transition-colors duration-300 hover:text-blue-600">
               Deputy Prime Minister II
             </div>
           </div>
