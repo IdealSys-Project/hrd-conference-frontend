@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaGlobe } from 'react-icons/fa';
+import { FaGlobe, FaMedal } from 'react-icons/fa';
 import './event-sponsors.css';
 
 interface EventSponsor {
@@ -46,8 +46,9 @@ const EventSponsors: React.FC = () => {
                 className="event-sponsor-logo-container"
               >
                 <div className="relative">
-                  <div className="event-sponsor-level bronze">
-                    {partner.level} Sponsor
+                  <div className={`event-sponsor-level ${partner.level.toLowerCase()}`}>
+                    <FaMedal className="inline-block mr-1.5" />
+                    <span>{partner.level} Sponsor</span>
                   </div>
                   <div className="event-sponsor-logo">
                   <Image

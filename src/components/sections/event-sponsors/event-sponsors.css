@@ -85,37 +85,72 @@
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 4px 12px;
+  padding: 6px 14px 6px 10px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  line-height: 1;
+  white-space: nowrap;
   z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  backdrop-filter: blur(2px);
+  min-width: 120px;
+}
+
+.event-sponsor-level svg {
+  flex-shrink: 0;
+  font-size: 0.9em;
+  margin-right: 2px;
+}
+
+.event-sponsor-level span {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .event-sponsor-level.bronze {
-  background: linear-gradient(135deg, #CD7F32 0%, #8B5A2B 100%);
-  color: white;
+  background: linear-gradient(135deg, rgba(205, 127, 50, 0.9) 0%, rgba(139, 90, 43, 0.95) 100%);
+  color: #FFF8E7;
   border: 1px solid #8B5A2B;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.event-sponsor-level.bronze svg {
+  color: #FFD700;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
 }
 
 .event-sponsor-level.silver {
-  background: linear-gradient(135deg, #C0C0C0 0%, #A0A0A0 100%);
-  color: #333;
-  border: 1px solid #D0D0D0;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+  background: linear-gradient(135deg, rgba(224, 224, 224, 0.95) 0%, rgba(160, 160, 160, 0.95) 100%);
+  color: #2D3748;
+  border: 1px solid #E2E8F0;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.event-sponsor-level.silver svg {
+  color: #F7FAFC;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
 }
 
 .event-sponsor-level.gold {
-  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.95) 0%, rgba(212, 175, 55, 0.95) 100%);
   color: #5E4200;
   border: 1px solid #FFD700;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
   font-weight: 700;
+}
+
+.event-sponsor-level.gold svg {
+  color: #FFFFFF;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
 }
 
 .event-sponsor-logo-container:hover .event-sponsor-level {
