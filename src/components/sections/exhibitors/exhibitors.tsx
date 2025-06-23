@@ -27,6 +27,14 @@ const Exhibitors: React.FC = () => {
         'Serojatech Sdn Bhd is an innovative IT solutions and software company specializing in AI-driven technologies, blockchain security, and digital transformation. With a commitment to integrity and continuous learning, Serojatech pioneers cutting-edge solutions in Big Data, IoT, and Machine Learning to empower businesses and drive sustainable growth.',
       website: 'https://www.serojatech.my/',
     },
+    {
+      id: 2,
+      name: 'EduAction',
+      logo: '/assets/images/exhibitors/Eduaction_logo_exhibitor.png',
+      description:
+        'At EduAction, our journey began with a vision to transform teams through immersive experiential learning. With over a decade of experience, we have proudly served over 2000 corporate clients and engaged over 90,000 participants in our transformative team-building programmes. Our track record speaks volumes about our commitment to excellence and ability to deliver impactful results.',
+      website: 'https://www.eduaction.com.my/home-new/',
+    },
   ];
 
   return (
