@@ -43,7 +43,7 @@ const Exhibitors: React.FC = () => {
         <div className="mb-12 flex justify-center">
           <div className="w-full max-w-3xl">
             <div className="text-center">
-              <h2 className="mb-8 text-4xl font-bold text-purple-800">Exhibitor</h2>
+              <h2 className="mb-8 text-4xl font-bold text-purple-800">Exhibitors</h2>
             </div>
           </div>
         </div>
