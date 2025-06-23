@@ -13,6 +13,7 @@ import EventSponsors from '@/components/sections/event-sponsors/event-sponsors';
 import RegistrationForm from '@/components/sections/registration-form/registration-form';
 import EventHighlights from '@/components/sections/event-highlights/event-highlights';
 import Exhibitors from '@/components/sections/exhibitors/exhibitors';
+import AssociationPartners from '@/components/sections/association-partners/association-partners';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <LaunchingCeremony />
       <Speakers />
       <EventSponsors />
+      <AssociationPartners />
       <MediaPartners />
       <Exhibitors />
       <SponsorshipForm />
