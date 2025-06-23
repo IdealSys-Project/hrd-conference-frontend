@@ -12,6 +12,7 @@ interface EventSponsor {
   logo: string;
   description: string;
   website: string;
+  level: 'Bronze' | 'Silver' | 'Gold';
 }
 
 const EventSponsors: React.FC = () => {
@@ -20,8 +21,9 @@ const EventSponsors: React.FC = () => {
       id: 1,
       name: 'Eduaction',
       logo: '/assets/images/event-sponsors/Eduaction_logo_sponsor.png',
-      description:'',
+      description: '',
       website: 'https://www.eduaction.com.my/home-new/',
+      level: 'Bronze',
     },
   ];
 
@@ -31,7 +33,7 @@ const EventSponsors: React.FC = () => {
         <div className="mb-12 flex justify-center">
           <div className="w-full max-w-3xl">
             <div className="text-center">
-              <h2 className="mb-8 text-4xl font-bold text-purple-800">Sponsors</h2>
+              <h2 className="mb-8 text-4xl font-bold text-purple-800">Sponsor</h2>
             </div>
           </div>
         </div>
@@ -43,7 +45,11 @@ const EventSponsors: React.FC = () => {
                 key={partner.id}
                 className="event-sponsor-logo-container"
               >
-                <div className="event-sponsor-logo">
+                <div className="relative">
+                  <div className="event-sponsor-level bronze">
+                    {partner.level} Sponsor
+                  </div>
+                  <div className="event-sponsor-logo">
                   <Image
                     src={partner.logo}
                     alt={partner.name}
@@ -61,6 +67,7 @@ const EventSponsors: React.FC = () => {
                     >
                       <FaGlobe size={16} />
                     </Link>
+                  </div>
                   </div>
                 </div>
               </div>
