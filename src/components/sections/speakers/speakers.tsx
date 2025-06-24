@@ -208,6 +208,16 @@ const Speakers: React.FC = () => {
       linkedIn: 'https://www.linkedin.com/in/hilsonyeap/?originalSubdomain=my',
       bio: 'Hilson Yeap is the founder and CEO of EduAction. He has 15 years of experience in the learning and development (L&D) industry, specializes in the area of team building, business development & gamification. He is the author of the best sought after training & development e-book, “7 reasons why training is not effective and what you can do about it”. He has been practicing & research on human capital development for the past 15 years and current Secretary of Experiential Learning Institute (ELI), Nevada USA. He has a degree in Food Marketing from University Putra Malaysia, a lifetime certification. member of Frontier Trainings USA, the world’s #1 business experiential learning provider & a certified trainer from PSMB TTT.',
     },
+    {
+      id: 21,
+      name: 'Zain Azrai bin Dato’ Dr. Zaaba',
+      position: 'Vice President for Rewards & People Management, Human Capital',
+      company: 'Lembaga Tabung Angkatan Tentera (LTAT)',
+      image: '/assets/images/speakers/speaker-images/LTAT_speaker_crop.png',
+      companyLogo: '/assets/images/speakers/company-logos/LTAT_logo.png',
+      linkedIn: 'https://www.linkedin.com/in/zainazraizaaba/?originalSubdomain=my',
+      bio: 'Zain Azrai bin Dato’ Dr. Zaaba is a seasoned HR professional, currently serving as the Vice President for Rewards & People Management, Human Capital, at Lembaga Tabung Angkatan Tentera (LTAT), a statutory body under the Malaysian Ministry of Defense that invests and manages military personnel’s pension fund. With over two decades of experience, Zain has honed his expertise through various roles in HR consulting firms such as Korn Ferry (formerly HayGroup) and Kincentric, as well as in HR operations at prominent organizations including KWAP, KPOC, and UEM Edgenta. His dedication to optimizing human capital strategies and his proficiency in managing Total Rewards underscores his commitment to ensuring employee retention and attraction. Zain’s leadership and strategic vision continue to drive LTAT towards achieving its business objectives.',
+    },
   ];
 
   const [selectedSpeaker, setSelectedSpeaker] = useState<(typeof speakers)[0] | null>(null);
