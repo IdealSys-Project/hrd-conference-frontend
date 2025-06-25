@@ -5,6 +5,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { get, pick } from 'lodash';
 import toast from 'react-hot-toast';
+import parsePhoneNumberFromString from 'libphonenumber-js';
 
 export interface RegistrationFormValues {
   fullName: string;
@@ -43,7 +44,23 @@ export const useRegistrationForm = () => {
         .required('An email address is required.'),
       company: Yup.string().required('Please specify your company name.'),
       jobTitle: Yup.string().required('Kindly enter your job title.'),
-      contactNumber: Yup.string().required('A contact number is required.'),
+      contactNumber: Yup.string()
+        .required('A contact number is required.')
+        .test(
+          'is-valid-phone',
+          'Invalid contact number. Please include your country code (e.g. 60 for Malaysia).',
+          value => {
+            if (!value) return false;
+
+            if (value.startsWith('+')) {
+              const phoneNumber = parsePhoneNumberFromString(value);
+              return phoneNumber?.isValid() ?? false;
+            }
+
+            const phoneNumber = parsePhoneNumberFromString('+' + value);
+            return phoneNumber?.isValid() ?? false;
+          }
+        ),
       promoCode: Yup.string(),
     }),
     onSubmit: async (values, formikHelpers) => {

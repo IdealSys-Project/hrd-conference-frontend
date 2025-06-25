@@ -4,6 +4,7 @@ import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import { get, pick } from 'lodash';
 import useSponsorshipFormStore from '@/shared/stores/useSponsorshipFormStore';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 import axios from 'axios';
 
 export const useSponsorshipAction = () => {
@@ -35,8 +36,22 @@ export const useSponsorshipAction = () => {
       company: Yup.string().required('Company is required'),
       jobTitle: Yup.string().required('Job Title is required'),
       contactNumber: Yup.string()
-        .matches(/^[0-9]+$/, 'Contact Number must contain only numbers.')
-        .required('Contact Number is required.'),
+        .required('Contact Number is required.')
+        .test(
+          'is-valid-phone',
+          'Invalid contact number. Please include your country code (e.g. 60 for Malaysia).',
+          value => {
+            if (!value) return false;
+
+            if (value.startsWith('+')) {
+              const phoneNumber = parsePhoneNumberFromString(value);
+              return phoneNumber?.isValid() ?? false;
+            }
+
+            const phoneNumber = parsePhoneNumberFromString('+' + value);
+            return phoneNumber?.isValid() ?? false;
+          }
+        ),
       interest: Yup.string().required('Interest is required'),
     }),
     onSubmit: async (values, formikHelpers) => {

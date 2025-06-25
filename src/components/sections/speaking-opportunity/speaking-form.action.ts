@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { get, pick } from 'lodash';
 import toast from 'react-hot-toast';
 import { useSpeakingFormStore } from '@/shared/stores/useSpeakingFormStore';
+import parsePhoneNumberFromString from 'libphonenumber-js';
 
 export interface SpeakingFormValues {
   fullName: string;
@@ -36,8 +37,22 @@ export const useSpeakingForm = () => {
       company: Yup.string().required('Company Name is required.'),
       jobTitle: Yup.string().required('Job Title is required.'),
       contactNumber: Yup.string()
-        .matches(/^[0-9]+$/, 'Contact Number must contain only numbers.')
-        .required('Contact Number is required.'),
+        .required('Contact Number is required.')
+        .test(
+          'is-valid-phone',
+          'Invalid contact number. Please include your country code (e.g. 60 for Malaysia).',
+          value => {
+            if (!value) return false;
+
+            if (value.startsWith('+')) {
+              const phoneNumber = parsePhoneNumberFromString(value);
+              return phoneNumber?.isValid() ?? false;
+            }
+
+            const phoneNumber = parsePhoneNumberFromString('+' + value);
+            return phoneNumber?.isValid() ?? false;
+          }
+        ),
     }),
     onSubmit: async (values, formikHelpers) => {
       try {
