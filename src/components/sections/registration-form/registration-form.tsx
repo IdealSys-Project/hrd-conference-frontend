@@ -30,7 +30,7 @@ const RegistrationForm: React.FC = () => {
       title: 'Normal Price',
       price: 'RM 1900',
       info: 'for 1 Pax',
-      description: 'Enjoy a 15% early registration discount until 30 June 2025',
+      description: 'Enjoy an extended 15% early registration discount, available until 15 July 2025',
     },
     {
       id: 2,

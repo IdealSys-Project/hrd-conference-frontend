@@ -35,6 +35,14 @@ const Exhibitors: React.FC = () => {
         'At EduAction, our journey began with a vision to transform teams through immersive experiential learning. With over a decade of experience, we have proudly served over 2000 corporate clients and engaged over 90,000 participants in our transformative team-building programmes. Our track record speaks volumes about our commitment to excellence and ability to deliver impactful results.',
       website: 'https://www.eduaction.com.my/home-new/',
     },
+    {
+      id: 3,
+      name: 'TaskHuman',
+      logo: '/assets/images/exhibitors/TaskHuman_logo_exhibitor.png',
+      description:
+        'TaskHuman is a global coaching platform designed to support personal and professional growth through real-time, human-to-human coaching. It offers 24/7 access to over 2,250 expert coaches across 1,200+ skills, including leadership, wellness, sales, and personal development—all within a single platform',
+      website: 'https://taskhuman.com/',
+    },
   ];
 
   return (
