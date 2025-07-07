@@ -35,6 +35,14 @@ const MediaPartners: React.FC = () => {
         'Media Elements is a creative production company based in Kuala Lumpur, Malaysia, specializing in cinematic video production and compelling storytelling. They craft impactful campaign videos, professional photography, and short documentary-style content, helping brands connect with audiences through authentic narratives and expert visual storytelling.',
       website: 'https://mediaelements.co/',
     },
+    {
+      id: 3,
+      name: 'Elena Dolmat Coach',
+      logo: '/assets/images/media-partners/Elena_Dolmat_Coach_logo.png',
+      description:
+        'Elena Dolmat Coach (edcoach.org) empowers business leaders via “Nonlinear Coaching,” a transformation-focused methodology. Certified globally in ICC, ICF, CIPD, and more, Elena offers individual, team, leadership‑assessment, shadow‑coaching, and group programs. Her clients include executives from WHO, Unilever, Nike, AbbVie, and beyond. She’s based in Borneo with two sons.',
+      website: 'https://edcoach.org/en/home/',
+    },
   ];
 
   return (
