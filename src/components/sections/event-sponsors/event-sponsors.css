@@ -12,7 +12,7 @@
 
 @media (min-width: 768px) {
   .event-sponsor-grid {
-    grid-template-columns: repeat(1, minmax(250px, 300px));
+    grid-template-columns: repeat(2, minmax(250px, 300px));
     max-width: 800px;
     margin: 0 auto;
   }

@@ -19,6 +19,30 @@ const EventSponsors: React.FC = () => {
   const EventSponsors: EventSponsor[] = [
     {
       id: 1,
+      name: 'The Growth Perspective',
+      logo: '/assets/images/event-sponsors/The_Growth_Perspective_logo_sponsor.png',
+      description: '',
+      website: 'https://www.thegrowthperspective.com/',
+      level: 'Gold',
+    },
+    {
+      id: 2,
+      name: "Laurea People's Signature",
+      logo: '/assets/images/event-sponsors/Laurea_People_Signature_logo_sponsor.png',
+      description: '',
+      website: 'https://laureapeoplessignature.com/',
+      level: 'Gold',
+    },
+    {
+      id: 3,
+      name: "TaskHuman",
+      logo: '/assets/images/event-sponsors/TaskHuman_logo_sponsor.png',
+      description: '',
+      website: 'https://taskhuman.com/',
+      level: 'Silver',
+    },
+    {
+      id: 4,
       name: 'Eduaction',
       logo: '/assets/images/event-sponsors/Eduaction_logo_sponsor.png',
       description: '',
@@ -33,7 +57,7 @@ const EventSponsors: React.FC = () => {
         <div className="mb-12 flex justify-center">
           <div className="w-full max-w-3xl">
             <div className="text-center">
-              <h2 className="mb-8 text-4xl font-bold text-purple-800">Sponsor</h2>
+              <h2 className="mb-8 text-4xl font-bold text-purple-800">Sponsors</h2>
             </div>
           </div>
         </div>
