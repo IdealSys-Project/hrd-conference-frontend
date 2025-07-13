@@ -46,6 +46,14 @@ const EventSponsors: React.FC = () => {
     },
     {
       id: 4,
+      name: "eduCLaaS",
+      logo: '/assets/images/event-sponsors/Educlaas_logo.png',
+      description: 'eduCLaaS is a Pan-Asia Digital Skilling Platform which aims to bridge the missing connection between education and the workplace. We foster a tripartite partnership across public, private, and non-profit sectors, to recontextualize education as a global common good for lifelong applied learning delivery, to develop future-ready talents and enterprises in the glocalized digital economy.',
+      website: 'https://www.educlaas.com/',
+      level: 'Silver',
+    },
+    {
+      id: 5,
       name: 'Eduaction',
       logo: '/assets/images/event-sponsors/Eduaction_logo_sponsor.png',
       description: 'At EduAction, our journey began with a vision to transform teams through immersive experiential learning. With over a decade of experience, we have proudly served over 2000 corporate clients and engaged over 90,000 participants in our transformative team-building programmes. Our track record speaks volumes about our commitment to excellence and ability to deliver impactful results.',

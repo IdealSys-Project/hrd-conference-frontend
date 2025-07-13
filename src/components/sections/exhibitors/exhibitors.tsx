@@ -43,6 +43,14 @@ const Exhibitors: React.FC = () => {
         'TaskHuman is a global coaching platform designed to support personal and professional growth through real-time, human-to-human coaching. It offers 24/7 access to over 2,250 expert coaches across 1,200+ skills, including leadership, wellness, sales, and personal development—all within a single platform',
       website: 'https://taskhuman.com/',
     },
+    {
+      id: 4,
+      name: 'People Potential',
+      logo: '/assets/images/exhibitors/People_Potential_logo.png',
+      description:
+        'We’re a learning and development consultancy and training provider based in Kuala Lumpur – with partners as far away as Europe. In the last 40 years, we’ve worked with multinational corporations (including several dozen on the Fortune 500 list) in 24 countries spread across 5 continents.',
+      website: 'https://www.peoplepotential.com/',
+    },
   ];
 
   return (
