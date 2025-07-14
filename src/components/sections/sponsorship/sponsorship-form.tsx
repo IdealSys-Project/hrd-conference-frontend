@@ -73,6 +73,7 @@ const SponsorshipForm: React.FC = () => {
                       <span className="package-name">Gold Sponsor:</span>
                     </div>
                     <span className="package-slots">2 slots available</span>
+                    <span className="sold-out-badge">Sold Out</span>
                   </li>
                   <li className="sponsor-info-item">
                     <div className="package-info">
@@ -80,6 +81,7 @@ const SponsorshipForm: React.FC = () => {
                       <span className="package-name">Silver Sponsor:</span>
                     </div>
                     <span className="package-slots">2 slots available</span>
+                    <span className="sold-out-badge">Sold Out</span>
                   </li>
                   <li className="sponsor-info-item">
                     <div className="package-info">
@@ -87,6 +89,7 @@ const SponsorshipForm: React.FC = () => {
                       <span className="package-name">Bronze Sponsor:</span>
                     </div>
                     <span className="package-slots">1 slot available</span>
+                    <span className="sold-out-badge">Sold Out</span>
                   </li>
                 </ul>
               </div>
