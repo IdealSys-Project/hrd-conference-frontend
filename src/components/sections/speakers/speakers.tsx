@@ -220,7 +220,7 @@ const Speakers: React.FC = () => {
     },
     {
       id: 22,
-      name: 'M Nazrul Effendy M Isa',
+      name: 'Nazrul Effendy M Isa',
       position: 'General Manager, Total Rewards, Petronas',
       company: 'Petronas',
       image: '/assets/images/speakers/speaker-images/Petronas_speaker_2_crop.png',
