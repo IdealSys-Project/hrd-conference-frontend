@@ -51,6 +51,14 @@ const Exhibitors: React.FC = () => {
         'We’re a learning and development consultancy and training provider based in Kuala Lumpur – with partners as far away as Europe. In the last 40 years, we’ve worked with multinational corporations (including several dozen on the Fortune 500 list) in 24 countries spread across 5 continents.',
       website: 'https://www.peoplepotential.com/',
     },
+    {
+      id: 5,
+      name: 'Awantec',
+      logo: '/assets/images/exhibitors/Awantec_logo.png',
+      description:
+        'Awantec, formerly Prestariang, is a Malaysian digital transformation leader offering cloud services, talent development, and ICT solutions. With over 20 years of experience, it drives innovation through subsidiaries like Awantec Systems and TalentXChange, advancing Malaysia’s digitalization journey across industries and communities.',
+      website: 'https://www.awantec.my/',
+    },
   ];
 
   return (
