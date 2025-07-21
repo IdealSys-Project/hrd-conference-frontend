@@ -220,7 +220,7 @@ const Speakers: React.FC = () => {
     },
     {
       id: 22,
-      name: 'Nazrul Effendy M Isa',
+      name: 'Nazrul Effendy',
       position: 'General Manager, Total Rewards, Petronas',
       company: 'Petronas',
       image: '/assets/images/speakers/speaker-images/Petronas_speaker_2_crop.png',
@@ -263,7 +263,7 @@ const Speakers: React.FC = () => {
       name: 'Pooja Jain',
       position: 'Founder, The Growth Perspective ',
       company: 'The Growth Perspective',
-      image: '/assets/images/speakers/speaker-images/The_Growth_Perspective_speaker_crop.png',
+      image: '/assets/images/speakers/speaker-images/Growth_Perspective_speaker_crop.png',
       companyLogo: '/assets/images/speakers/company-logos/The_Growth_Perspective_logo.png',
       linkedIn: 'https://www.linkedin.com/in/pooja-j-85411810/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=sg',
       bio: "Pooja Jain is the Founder of The Growth Perspective, a Singapore-based learning strategy consultancy. With over 20 years of experience across corporate, enterprise, and education sectors, Pooja has impacted half a million learners through her work with Malaysia's Ministry of Education. She works with organisations to embed capability-building into HR systems and approach AI integration critically. Pooja is known for cutting through hype and trends with sharp insights and uncomfortable truths, the kind the industry needs to hear if they want HR initiatives to deliver ROI. At HRD Conference 2025, she will share insights on how HR can align learning, capability, and AI for meaningful organisational transformation.",
