@@ -334,7 +334,7 @@ const Speakers: React.FC = () => {
       position: "Head of Talent Management & Organisation Development",
       company: "UOB",
       image: '/assets/images/speakers/speaker-images/UOB_speaker_crop.png',
-      companyLogo: '/assets/images/speakers/company-logos/UOB_logo.png',
+      companyLogo: '/assets/images/speakers/company-logos/UOB_logo_2.png',
       linkedIn: 'https://www.linkedin.com/in/usha-devi-3b4a9ab9/?originalSubdomain=my',
       bio: "Ms. Usha Devi Muthusamy is the Head of Talent Management and Organisational Development at United Overseas Bank (UOB Malaysia). With more than 20 years of distinguished experience across the financial services and consulting sectors, Usha is a recognised expert in succession planning, leadership development, and organisational culture transformation across the region. Usha has a unique ability to distil complex talent strategies into clear, actionable pathways. Her intuitive yet structured approach to leadership development enables emerging leaders to grow with purpose and clarity, unlocking the confidence needed to realise their full potential.",
     },
